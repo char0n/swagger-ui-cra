@@ -1,4 +1,29 @@
-# Getting Started with Create React App
+# swagger-ui-react + Create React App
+
+This is POC of swagger-ui-react + Create React App (CRA) combo, demonstrating
+that swagger-ui-react can be used with CRA without ejecting it.
+
+### Installation
+
+Due to the fact that [swagger-ui-react](https://www.npmjs.com/package/swagger-ui-react)
+requires [react@17.0.2](https://www.npmjs.com/package/react/v/17.0.2), `--legacy-peer-deps` option
+needs to be used while installing project containing CRA + `swagger-ui-react` combo:
+
+```sh
+ $ npm i --legacy-peer-deps
+```
+
+### Source maps
+
+[autolinker](https://www.npmjs.com/package/autolinker) dependency of `swagger-ui-react` has corrupted
+source maps. Because of that, CRA produces harmless warnings during builds. These warnings
+have been disabled by setting `GENERATE_SOURCEMAP=false` in `.env` file.
+
+### Jest config
+
+Specialized [Jest](https://jestjs.io/) config is provided in `package.json` file under `jest` key.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
