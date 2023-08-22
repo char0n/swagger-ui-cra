@@ -4,17 +4,31 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
+    "@testing-library/react": "^12.1.5",
     "@testing-library/user-event": "^13.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-scripts": "5.0.1",
+    "swagger-ui-react": "^5.4.2",
     "web-vitals": "^2.1.4"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "/node_modules/(?!(swagger-ui-react|swagger-client|react-syntax-highlighter)/)"
+    ],
+    "moduleNameMapper": {
+      "^#swagger-ui$": "<rootDir>/node_modules/swagger-ui-react/swagger-ui.js",
+      "^#buffer": "<rootDir>/node_modules/@swagger-api/apidom-reference/cjs/util/polyfills/buffer/standard-import.cjs",
+      "@swagger-api/apidom-reference/configuration/empty": "<rootDir>/node_modules/@swagger-api/apidom-reference/cjs/configuration/empty.cjs",
+      "@swagger-api/apidom-reference/parse/parsers/binary": "<rootDir>/node_modules/@swagger-api/apidom-reference/cjs/parse/parsers/binary/index-node.cjs",
+      "@swagger-api/apidom-reference/resolve/strategies/openapi-3-1": "<rootDir>/node_modules/@swagger-api/apidom-reference/cjs/resolve/strategies/openapi-3-1/index.cjs",
+      "@swagger-api/apidom-reference/dereference/strategies/openapi-3-1": "<rootDir>/node_modules/@swagger-api/apidom-reference/cjs/dereference/strategies/openapi-3-1/index.cjs"
+    }
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts testq",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
